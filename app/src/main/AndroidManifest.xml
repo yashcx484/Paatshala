@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gathr">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <!-- Here we can change package themes ,add permissions, api KEYS etc-->
+    <!-- We only need audio and camera permission from the user but that is handled by Jitsi SDK itself -->
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/bird"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/bird"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Gathr.NoActionBar">
+
+        <activity android:name=".ChatActivity"></activity>
+        <activity android:name=".NewMessageActivity" />
+        <activity android:name=".access.AlreadyUserActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity android:name=".CallActivity"/>
+        <activity
+            android:name=".access.LoginActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <!--Makes this activity the first one to view -->
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <receiver android:name=".utils.AlarmReceiver" />
+    </application>
+</manifest>
